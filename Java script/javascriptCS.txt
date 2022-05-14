@@ -579,41 +579,74 @@ text1 += "nice day";
       const fruits = ["Banana", "Orange", "Apple", "Mango"];
       fruits.push("Kiwi");
 
-   => Adding Array Elements
+   => JavaScript Array shift() unshift()
       
-      -The easiest way to add a new element to an array is using the push() method:
+      -shift()
 
       Example : 
 
-      const fruits = ["Banana", "Orange", "Apple"];
-      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.shift();
 
-   => Adding Array Elements
-      
-      -The easiest way to add a new element to an array is using the push() method:
+      -unshift()
 
-      Example : 
+      Example :
 
-      const fruits = ["Banana", "Orange", "Apple"];
-      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.unshift("Lemon");
 
-   => Adding Array Elements
-      
-      -The easiest way to add a new element to an array is using the push() method:
+   => Changing Elements 
 
       Example : 
 
-      const fruits = ["Banana", "Orange", "Apple"];
-      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits[0] = "Kiwi";
 
-   => Adding Array Elements
+   => JavaScript Array length
       
-      -The easiest way to add a new element to an array is using the push() method:
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits[fruits.length] = "Kiwi";
+
+   => JavaScript Array delete()
+      
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      delete fruits[0];
+
+   => Merging (Concatenating) Arrays
+      
+      Example : 
+
+      const myGirls = ["Cecilie", "Lone"];
+      const myBoys = ["Emil", "Tobias", "Linus"];
+      const myChildren = myGirls.concat(myBoys);
+
+   => Splicing and Slicing Arrays
+
+      -The splice() method adds new items to an array.
 
       Example : 
 
-      const fruits = ["Banana", "Orange", "Apple"];
-      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.splice(2, 0, "Lemon", "Kiwi");
+
+      -The slice() method slices out a piece of an array.
+      
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.splice(2, 2, "Lemon", "Kiwi");
+
+   => Finding Max and Min Values in an Array
+      
+      -There are no built-in functions for finding the highest or lowest value in a JavaScript array.
+
+      -You will learn how you solve this problem in the next chapter of this tutorial.
+
+
 -----------------------------------------------------------------------------------------
 
 //JavaScript Can Change HTML Content
