@@ -1,0 +1,852 @@
+
+
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'
+
+-------------------------------------------------------------------
+
+//JavaScript Can Change HTML Styles (CSS)
+ 
+ getElementById()
+
+ Example : 
+
+ onclick="document.getElementById('demo').style.fontSize='35px'"
+
+-------------------------------------------------------------------------
+
+//JavaScript Display Possibilities
+//JavaScript can "display" data in different ways:
+
+=> Writing into an HTML element, using innerHTML.
+
+Example : 
+document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+=> Writing into the HTML output using document.write().
+
+Example : 
+document.write(5 + 6);
+
+=> Writing into an alert box, using window.alert().
+
+Example : 
+window.alert(5 + 6);
+
+
+=> Writing into the browser console, using console.log().
+
+Example :
+console.log(5 + 6);
+
+=> Writing into the browser console, using window.print()
+
+Example :
+onclick="window.print()"
+
+---------------------------------------------------------------------------
+
+//JavaScript Statements
+ 
+    let x, y, z;    // Statement 1
+    x = 5;          // Statement 2
+    y = 6;          // Statement 3
+    z = x + y;      // Statement 4
+
+---------------------------------------------------------------------------
+
+//JavaScript declaration
+
+   Let , Const , Var
+ 
+ Example : 
+
+     var carName;
+     let carName;
+
+
+     Note : 
+     -Variables defined with let cannot be redeclared.
+     -A const variable cannot be reassigned
+     -JavaScript const variables must be assigned a value when they are declared:
+
+--------------------------------------------------------------------------
+
+//JavaScript Arrays
+ 
+ const arrayName = ["", "", "" , ...];
+
+ Example : 
+
+ const cars = ["Saab", "Volvo", "BMW"];
+
+
+    => You can change an element:
+         cars[0] = "Toyota";
+
+----------------------------------------------------------------------------
+
+//JavaScript Objects
+ 
+ const objectName = {:"", :"", :"", ...};
+
+ Example : 
+
+ const car = {type:"Fiat", model:"500", color:"white"};
+
+
+    => You can change a property:
+          car.color = "red";
+    => You can add a property:
+          car.owner = "Johnson";
+    => You can add an element:
+          cars.push("Audi");
+
+------------------------------------------------------------------------------------          
+
+//JavaScript Arithmatic Operators
+
+            +	    Addition
+            -	    Subtraction
+            *	    Multiplication
+            **	    Exponentiation (ES2016)
+            /	    Division
+            %	    Modulus (Division Remainder)
+            ++	    Increment
+            --	    Decrement
+
+----------------------------------------------------------------------------------
+
+//JavaScript Assignment Operators
+ 
+            Operator    Example	    Same As
+            =	        x = y	    x = y
+            +=	        x += y	    x = x + y
+            -=	        x -= y	    x = x - y
+            *=	        x *= y	    x = x * y
+            /=	        x /= y	    x = x / y
+            %=	        x %= y      x = x % y
+            **=	        x **= y	    x = x ** y
+---------------------------------------------------------------------------------
+
+//JavaScript String Operators
+
+=> The + operator can also be used to add (concatenate) strings:
+
+Example : 
+let text3 = text1 + " " + text2;
+
+=> The += assignment operator can also be used to add (concatenate) strings:
+
+Example : 
+let text1 = "What a very ";
+text1 += "nice day";
+
+--------------------------------------------------------------------------------
+
+//JavaScript Comparison Operators
+ 
+            Operator	Description
+            ==	        equal to
+            ===	        equal value and equal type
+            !=	        not equal
+            !==	        not equal value or not equal type
+            >	        greater than
+            <	        less than
+            >=	        greater than or equal to
+            <=	        less than or equal to
+            ?	        ternary operator
+
+---------------------------------------------------------------------------------------
+
+//JavaScript Logical Operators
+ 
+            Operator    	Description 
+            &&	            logical and
+            ||	            logical or
+            !	            logical not
+
+-----------------------------------------------------------------------------------------
+
+//JavaScript Type Operators
+ 
+            Operator	Description
+            typeof	    Returns the type of a variable
+            instanceof	Returns true if an object is an instance of an object type
+
+-----------------------------------------------------------------------------------------
+
+//JavaScript Bitwise Operators
+ 
+            Operator	        Description	                 Example	        Same as	            Result	    Decimal
+            &	                AND	                         5 & 1	            0101 &              0001	    0001	 1
+            |	                OR	                         5 | 1	            0101 | 0001	        0101	    5
+            ~	                NOT	                         ~ 5	            ~0101	            1010	    10
+            ^	                XOR	                         5 ^ 1	            0101 ^ 0001	        0100	    4
+            <<	                left shift	                 5 << 1	            0101 << 1	        1010	    10
+            >>	                right shift	                 5 >> 1	            0101 >> 1	        0010	    2
+            >>>	                unsigned right shift	     5 >>> 1	        0101 >>> 1      	0010	    2
+
+-----------------------------------------------------------------------------------------
+
+//JavaScript Data Types
+ 
+ Example : 
+ let length = 16;                               // Number
+ let lastName = "Johnson";                      // String
+ let x = {firstName:"John", lastName:"Doe"};    // Object
+ true / false                                   // Booleans
+ Undefined                                      // Undefined
+-----------------------------------------------------------------------------------------
+//JavaScript Functions with return
+ 
+ function functionName(parameter1, parameter2, parameter3) {
+  /* write logic here */
+}
+ Example : 
+ function myFunction(a, b) {
+  return a * b;             // Function returns the product of a and b
+}
+
+-----------------------------------------------------------------------------------------
+//Accessing Object Properties
+ 
+ =>You can access object properties in two ways:
+   - objectName.propertyName
+   - objectName["propertyName"]
+
+-----------------------------------------------------------------------------------------
+//JavaScript objects can store functions as a properties
+ 
+ Example : 
+
+    const person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+        return this.firstName + " " + this.lastName;
+    }
+    };
+
+-----------------------------------------------------------------------------------------
+//The this Keyword
+ 
+=> In a function definition, this refers to the "owner" of the function.
+
+=> In the example above, this is the person object that "owns" the fullName function.
+
+=> In other words, this.firstName means the firstName property of this object.
+
+-----------------------------------------------------------------------------------------
+//JavaScript Events
+ 
+        Event	        Description
+        onchange	    An HTML element has been changed
+        onclick	        The user clicks an HTML element
+        onmouseover 	The user moves the mouse over an HTML element
+        onmouseout	    The user moves the mouse away from an HTML element
+        onkeydown	    The user pushes a keyboard key
+        onload	        The browser has finished loading the page
+
+-----------------------------------------------------------------------------------------
+//JavaScript String Methods
+
+   => JavaScript String Length
+      -name.length;
+        
+        Example : 
+
+   => Extracting String Parts
+      -slice(start, end)
+        
+        Example : 
+
+        let str = "Apple, Banana, Kiwi";
+        let part = str.slice(7, 13);
+        
+      -substring(start, end)
+
+        Example : 
+
+        let str = "Apple, Banana, Kiwi";
+        let part = str.substring(7, 13);     
+
+     
+      -substr(start, length)
+
+      Example : 
+
+      let str = "Apple, Banana, Kiwi";
+      let part = str.substr(7);
+    
+   => Replacing String Content
+      replace()
+
+      Example : 
+
+      let text = "Please visit Microsoft!";
+      let newText = text.replace("Microsoft", "W3Schools");
+
+   => Converting to Upper and Lower Case
+
+      -toUpperCase()
+
+      Example : 
+
+      let text1 = "Hello World!";
+      let text2 = text1.toUpperCase();
+
+      -toLowerCase()
+
+      Example : 
+
+      let text1 = "Hello World!";
+      let text2 = text1.toLowerCase();
+
+
+   => JavaScript String concat()
+      -concat()
+
+      Example : 
+
+      let text1 = "Hello";
+      let text2 = "World";
+      let text3 = text1.concat(" ", text2);
+
+   => JavaScript String trim()
+      -trim()
+
+      Example : 
+
+      let text1 = "      Hello World!      ";
+      let text2 = text1.trim();
+
+   => JavaScript String Padding
+      -padStart()
+
+      Example :
+
+      let text = "5";
+      let padded = text.padStart(4,"x");
+
+      -padEnd()
+
+      Example :
+
+      let text = "5";
+      let padded = text.padEnd(4,"x");
+
+   => JavaScript String Padding
+      -charAt(position)
+
+      Example : 
+
+      let text = "HELLO WORLD";
+      let char = text.charAt(0);  
+
+      -charCodeAt()
+
+      Example : 
+
+      let text = "HELLO WORLD";
+      let char = text.charCodeAt(0); 
+     
+   => Converting a String to an Array
+      -split()
+
+      Example : 
+
+      text.split(",")    // Split on commas
+      text.split(" ")    // Split on spaces
+      text.split("|")    // Split on pipe        
+
+   => JavaScript Search Methods
+      -startsWith()
+
+      Example :
+
+      let text = "Hello world, welcome to the universe.";
+      text.startsWith("Hello");
+
+      -endsWith()
+      -indexOf()
+
+      Example : 
+
+      let str = "Please locate where 'locate' occurs!";
+      str.indexOf("locate");    
+
+      -lastIndexOf()
+
+      Example : 
+
+      let str = "Please locate where 'locate' occurs!";
+      str.lastIndexOf("locate");
+
+   => JavaScript String search()
+      -search()   
+
+      Example : 
+
+      let str = "Please locate where 'locate' occurs!";
+      str.search("locate");    
+
+   => JavaScript String includes()
+      -includes()
+
+      Example : 
+
+      let text = "Hello world, welcome to the universe.";
+      text.includes("world");   
+
+   => JavaScript String Padding
+      -padStart()        
+
+-----------------------------------------------------------------------------------------
+
+//JavaScript Number Methods
+ 
+   => The toString() Method
+
+      -toString()
+
+      Example : 
+
+      let x = 123;
+      x.toString();
+      (123).toString();
+      (100 + 23).toString();
+
+   => The toExponential() Method
+
+      Example : 
+
+      let x = 9.656;
+      x.toExponential(2);
+      x.toExponential(4);
+
+   => The toFixed() Method
+
+      Example : 
+
+      let x = 9.656;
+      x.toFixed(0);
+      x.toFixed(2);   
+
+   => The toPrecision() Method
+
+      Example : 
+
+      let x = 9.656;
+      x.toPrecision();
+      x.toPrecision(2);
+
+   => The valueOf() Method
+
+      Example : 
+
+      let x = 123;
+      x.valueOf();
+      (123).valueOf();
+      (100 + 23).valueOf(); 
+
+   => Converting Variables to Numbers
+       
+        Method	        Description
+        Number()	    Returns a number, converted from its argument.
+        parseFloat()	Parses its argument and returns a floating point number
+        parseInt()	    Parses its argument and returns an integer
+
+
+   => The Number() Method Used on Dates
+
+      Example : 
+
+      Number(new Date("1970-01-01"))
+
+   => Number Properties 
+      
+        Property	            Description
+        MAX_VALUE	            Returns the largest number possible in JavaScript
+        MIN_VALUE	            Returns the smallest number possible in JavaScript
+        POSITIVE_INFINITY	    Represents infinity (returned on overflow)
+        NEGATIVE_INFINITY	    Represents negative infinity (returned on overflow)
+        NaN	                    Represents a "Not-a-Number" value
+            
+
+-----------------------------------------------------------------------------------------
+//Array Properties and Methods
+ 
+    => TThe length Property
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      let length = fruits.length;
+
+   => Accessing the First Array Element
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      let fruit = fruits[0];
+
+   => Accessing the Last Array Element
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      let fruit = fruits[fruits.length - 1];
+
+   => Accessing the Last Array Element
+
+      Example 1: 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      let fLen = fruits.length;
+      let text = "<ul>";
+      for (let i = 0; i < fLen; i++) {
+      text += "<li>" + fruits[i] + "</li>";
+      }
+      text += "</ul>";
+
+      Note : example is using for loop.
+
+      Example 2: 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+      let text = "<ul>";
+      fruits.forEach(myFunction);
+      text += "</ul>";
+
+      function myFunction(value) {
+        text += "<li>" + value + "</li>";
+      }
+
+      Note : example is using forEach.
+
+   => Adding Array Elements
+      
+      -The easiest way to add a new element to an array is using the push() method:
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple"];
+      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+
+      WARNING! : Adding elements with high indexes can create undefined "holes" in an array:
+
+   => The Difference Between Arrays and Objects
+
+      -In JavaScript, arrays use numbered indexes.  
+      -In JavaScript, objects use named indexes. 
+ 
+   => For check is array or not
+
+      -Array.isArray()
+
+   => Converting Arrays to Strings
+      
+      -toString()
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      document.getElementById("demo").innerHTML = fruits.toString();
+
+      Note : The join() method also joins all array elements into a string.
+
+   => Popping and Pushing
+      
+      -pop()
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.pop();
+
+      -push()
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.push("Kiwi");
+
+   => Adding Array Elements
+      
+      -The easiest way to add a new element to an array is using the push() method:
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple"];
+      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+
+   => Adding Array Elements
+      
+      -The easiest way to add a new element to an array is using the push() method:
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple"];
+      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+
+   => Adding Array Elements
+      
+      -The easiest way to add a new element to an array is using the push() method:
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple"];
+      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+
+   => Adding Array Elements
+      
+      -The easiest way to add a new element to an array is using the push() method:
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple"];
+      fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+-----------------------------------------------------------------------------------------
+
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
+//JavaScript Can Change HTML Content
+ 
+ getElementById()
+
+ Example : 
+
+ onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+
+-----------------------------------------------------------------------------------------
