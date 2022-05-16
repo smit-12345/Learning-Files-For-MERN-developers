@@ -646,160 +646,748 @@ text1 += "nice day";
 
       -You will learn how you solve this problem in the next chapter of this tutorial.
 
+   => Sorting an Array
+      
+      -sort()
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.sort();
+
+   => Reversing an Array
+      
+      -reverse()
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.sort();
+      fruits.reverse();
+
+   => Numeric Sort
+      
+      -sort()
+
+      Example : 
+
+      const points = [40, 100, 1, 5, 25, 10];
+      points.sort(function(a, b){return a - b});
+
+      const points = [40, 100, 1, 5, 25, 10];
+      points.sort(function(a, b){return b - a});
+
+   => JavaScript Array forEach()
+      
+      -forEach()
+
+      Example : 
+
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.shift();
+
+   => JavaScript Array map()
+      
+      - The map() method creates a new array by performing a function on each array element.
+      - The map() method does not execute the function for array elements without values.
+      - The map() method does not change the original array.
+      
+      -map()
+
+      Example : 
+
+      const numbers1 = [45, 4, 9, 16, 25];
+      const numbers2 = numbers1.map(myFunction);
+
+      function myFunction(value, index, array) {
+      return value * 2;
+      }
+
+   => JavaScript Array filter()
+      
+      -filter()
+     
+      Example : 
+
+      const numbers = [45, 4, 9, 16, 25];
+      const over18 = numbers.filter(myFunction);
+
+      function myFunction(value, index, array) {
+      return value > 18;
+      }
+
+   => JavaScript Array reduce()
+      
+      -reduce()
+
+      Example : 
+
+      const numbers = [45, 4, 9, 16, 25];
+      let sum = numbers.reduce(myFunction, 100);
+
+      function myFunction(total, value) {
+      return total + value;
+      }
+
+      -reduceRight()
+
+      Example : 
+
+      const numbers = [45, 4, 9, 16, 25];
+      let sum = numbers.reduceRight(myFunction);
+
+      function myFunction(total, value, index, array) {
+      return total + value;
+      }
+
+   => JavaScript Array every()
+      
+      -every()
+     
+      Example : 
+      
+      const numbers = [45, 4, 9, 16, 25];
+      let allOver18 = numbers.every(myFunction);
+
+      function myFunction(value, index, array) {
+      return value > 18;
+      }
+
+   => JavaScript Array some()
+      
+      -some()
+     
+      Example : 
+      
+      const numbers = [45, 4, 9, 16, 25];
+      let someOver18 = numbers.some(myFunction);
+
+      function myFunction(value, index, array) {
+      return value > 18;
+      }
+
+   => JavaScript Array indexOf()
+      
+      -indexOf()
+     
+      Example : 
+      
+      const fruits = ["Apple", "Orange", "Apple", "Mango"];
+      let position = fruits.indexOf("Apple") + 1;
+
+   => JavaScript Array lastIndexOf()
+      
+      -lastIndexOf()
+     
+      Example : 
+      
+      const fruits = ["Apple", "Orange", "Apple", "Mango"];
+      let position = fruits.lastIndexOf("Apple") + 1;
+
+   => JavaScript Array find()
+      
+      -find()
+     
+      const numbers = [4, 9, 16, 25, 29];
+      let first = numbers.find(myFunction);
+
+      function myFunction(value, index, array) {
+      return value > 18;
+      }
+
+   => JavaScript Array findIndex()
+      
+      -findIndex()
+     
+      Example : 
+      
+      const numbers = [4, 9, 16, 25, 29];
+      let first = numbers.findIndex(myFunction);
+
+      function myFunction(value, index, array) {
+      return value > 18;
+      }
+
+   => JavaScript Array.from()
+      
+      -Array.from()
+     
+      Example : 
+      
+      const myArr = Array.from("ABCDEFG");
+      document.getElementById("demo").innerHTML = myArr;
+
+   => JavaScript Array Keys()
+      
+      -Array.keys()
+     
+      Example : 
+      
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      const keys = fruits.keys();
+
+      for (let x of keys) {
+      text += x + "<br>";
+      }
+
+   => Array entries()
+      
+      -Array.entries()
+     
+      Example : 
+      
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      const f = fruits.entries();
+
+      for (let x of f) {
+      document.getElementById("demo").innerHTML += x;
+      }
+
+   => JavaScript Array includes()
+      
+      -Array.includes()
+     
+      Example : 
+      
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      fruits.includes("Mango"); // is true
 
 -----------------------------------------------------------------------------------------
 
-//JavaScript Can Change HTML Content
+//JavaScript Math Object
  
- getElementById()
+   => Math Properties (Constants)
+      
+      Math.E        // returns Euler's number
+      Math.PI       // returns PI
+      Math.SQRT2    // returns the square root of 2
+      Math.SQRT1_2  // returns the square root of 1/2
+      Math.LN2      // returns the natural logarithm of 2
+      Math.LN10     // returns the natural logarithm of 10
+      Math.LOG2E    // returns base 2 logarithm of E
+      Math.LOG10E   // returns base 10 logarithm of E
 
- Example : 
+   => Math Methods
+      
+      Method	      Description
+      abs(x)	      Returns the absolute value of x
+      acos(x)	      Returns the arccosine of x, in radians
+      acosh(x)	      Returns the hyperbolic arccosine of x
+      asin(x)	      Returns the arcsine of x, in radians
+      asinh(x)	      Returns the hyperbolic arcsine of x
+      atan(x)	      Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians
+      atan2(y, x)	   Returns the arctangent of the quotient of its arguments
+      atanh(x)	      Returns the hyperbolic arctangent of x
+      cbrt(x)	      Returns the cubic root of x
+      ceil(x)	      Returns x, rounded upwards to the nearest integer
+      cos(x)	      Returns the cosine of x (x is in radians)
+      cosh(x)	      Returns the hyperbolic cosine of x
+      exp(x)	      Returns the value of Ex
+      floor(x)	      Returns x, rounded downwards to the nearest integer
+      log(x)	      Returns the natural logarithm (base E) of x
+      max(x, y, z, ..., n)	Returns the number with the highest value
+      min(x, y, z, ..., n)	Returns the number with the lowest value
+      pow(x, y)	Returns the value of x to the power of y
+      random()	      Returns a random number between 0 and 1
+      round(x)	      Rounds x to the nearest integer
+      sign(x)	      Returns if x is negative, null or positive (-1, 0, 1)
+      sin(x)	      Returns the sine of x (x is in radians)
+      sinh(x)	      Returns the hyperbolic sine of x
+      sqrt(x)	      Returns the square root of x
+      tan(x)	      Returns the tangent of an angle
+      tanh(x)	      Returns the hyperbolic tangent of a number
+      trunc(x)	      Returns the integer part of a number (x)
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+   => JavaScript Random
+      
+      -Math.random()
+     
+      Example : 
+      
+      document.getElementById("id").innerHTML = Math.random();     
+
+      -Math.floor()
+     
+      Example : 
+
+      // Returns a random integer from 0 to 9:
+      Math.floor(Math.random() * 10);      
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//JavaScript Booleans
+
+     Very often, in programming, you will need a data type that can only have one of two values, like
+
+     YES / NO
+     ON / OFF
+     TRUE / FALSE
+     For this, JavaScript has a Boolean data type. It can only take the values true   or false.
  
- getElementById()
-
- Example : 
-
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+       - Boolean(x > y)
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//JavaScript if, else, and else if
+
+    - Use if to specify a block of code to be executed, if a specified condition is true
+    - Use else to specify a block of code to be executed, if the same condition is false
+    - Use else if to specify a new condition to test, if the first condition is false
+    - Use switch to specify many alternative blocks of code to be executed
  
- getElementById()
+   => The if Statement
+      
+      if (condition) {
+         //  block of code to be executed if the condition is true
+      }
 
- Example : 
+   => The else Statement
+      
+      if (condition) {
+         //  block of code to be executed if the condition is true
+      } else {
+         //  block of code to be executed if the condition is false
+      }
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+   => The else if Statement
+      
+      if (condition1) {
+         //  block of code to be executed if condition1 is true
+      } else if (condition2) {
+         //  block of code to be executed if the condition1 is false and condition2 is true
+      } else {
+         //  block of code to be executed if the condition1 is false and condition2 is false
+      }
+
+   => The JavaScript Switch Statement
+      
+      switch(expression) {
+      case x:
+         // code block
+         break;
+      case y:
+         // code block
+         break;
+      default:
+         // code block
+      }
+      
+
+   => The break Keyword
+      
+      - When JavaScript reaches a break keyword, it breaks out of the switch block.
+
+   => The default Keyword
+      
+      - The default keyword specifies the code to run if there is no case match
+
+      Example : 
+
+      switch (new Date().getDay()) {
+      default:
+         text = "Looking forward to the Weekend";
+         break;
+      case 6:
+         text = "Today is Saturday";
+         break;
+      case 0:
+         text = "Today is Sunday";
+      }
+
+
+   => The JavaScript Switch Statement
+      
+      switch(expression) {
+      case x:
+         // code block
+         break;
+      case y:
+         // code block
+         break;
+      default:
+         // code block
+      }                 
+-----------------------------------------------------------------------------------------
+//JavaScript Loops
+ 
+      - for - loops through a block of code a number of times
+      - for/in - loops through the properties of an object
+      - for/of - loops through the values of an iterable object
+      - while - loops through a block of code while a specified condition is true
+      - do/while - also loops through a block of code while a specified condition is true
+
+   => The For Loop
+
+      for (statement 1; statement 2; statement 3) {
+            // code block to be executed
+      }
+      
+      Example : 
+
+      for (let i = 0; i < 5; i++) {
+          text += "The number is " + i + "<br>";
+      }
+
+   => The For In Loop
+
+      for (key in object) {
+          // code block to be executed
+      }
+      
+      Example : 
+
+      const person = {fname:"John", lname:"Doe", age:25};
+
+      let text = "";
+      for (let x in person) {
+         text += person[x];
+      }
+
+   => The For Of Loop
+
+      for (variable of iterable) {
+         // code block to be executed
+      }
+      
+      Example : 
+
+      const cars = ["BMW", "Volvo", "Mini"];
+
+      let text = "";
+      for (let x of cars) {
+         text += x;
+      }
+
+   => The While Loop
+
+      while (condition) {
+         // code block to be executed
+      }
+      
+      Example : 
+
+      while (i < 10) {
+         text += "The number is " + i;
+         i++;
+      }
+
+   => The Do While Loop
+
+      do {
+          // code block to be executed
+      }
+
+      while (condition);
+      
+      Example : 
+
+      do {
+         text += "The number is " + i;
+         i++;
+      }
+      while (i < 10);
+          
+-----------------------------------------------------------------------------------------
+//JavaScript Errors
+ 
+   => Throw, and Try...Catch...Finally
+
+      - The try statement defines a code block to run (to try).
+
+      - The catch statement defines a code block to handle any error.
+
+      - The finally statement defines a code block to run regardless of the result.
+
+      - The throw statement defines a custom error.
+
+   => Errors Will Happen!
+
+      <p id="demo"></p>
+
+      <script>
+        try {
+          adddlert("Welcome guest!");
+        }
+        catch(err) {
+          document.getElementById("demo").innerHTML = err.message;
+        }
+      </script>
+
+   => JavaScript try and catch
+
+      try {
+         Block of code to try
+      }
+      catch(err) {
+         Block of code to handle errors
+      }      
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//JavaScript Scope
  
- getElementById()
+   => Block Scope
 
- Example : 
+      - ES6 introduced two important new JavaScript keywords: let and const.
+      - These two keywords provide Block Scope in JavaScript.
+      - Variables declared inside a { } block cannot be accessed from outside the block
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+      Example : 
+
+         {
+           let x = 2;
+         }
+         // x can NOT be used here
+
+   => Local Scope
+
+      - Variables declared within a JavaScript function, become LOCAL to the function.
+       
+      Example : 
+
+      // code here can NOT use carName
+
+      function myFunction() {
+      let carName = "Volvo";
+        // code here CAN use carName
+      }
+
+      // code here can NOT use carName
+
+   => Function Scope
+
+      - Variables defined inside a function are not accessible (visible) from outside the function.
+      - Variables declared with var, let and const are quite similar when declared inside a function.
+
+      Example : 
+
+      function myFunction() {
+        var carName = "Volvo";   // Function Scope
+      }
+
+   => Global JavaScript Variables
+      
+      - A variable declared outside a function, becomes GLOBAL.
+
+      Example : 
+
+      let carName = "Volvo";
+      // code here can use carName
+
+      function myFunction() {
+      // code here can also use carName
+      }
+
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//JavaScript Use Strict
  
- getElementById()
+- The purpose of "use strict" is to indicate that the code should be executed in "strict mode"
+- You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables.
 
- Example : 
+   => Declaring Strict Mode
+      
+      - Strict mode is declared by adding "use strict"; to the beginning of a script or a function.
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+      Example : 
+
+      "use strict";
+      myFunction();
+
+      function myFunction() {
+        y = 3.14;   // This will also cause an error because y is not declared
+      }
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//The JavaScript this Keyword
  
- getElementById()
+- In JavaScript, the this keyword refers to an object. 
+- Which object depends on how this is being invoked (used or called).
 
- Example : 
+=> The this keyword refers to different objects depending on how it is used:
+     
+   - In an object method, this refers to the object.
+   - Alone, this refers to the global object.
+   - In a function, this refers to the global object.
+   - In a function, in strict mode, this is undefined.
+   - In an event, this refers to the element that received the event.
+   - Methods like call(), apply(), and bind() can refer this to any object.
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+=> this in a Method
+
+  Example : 
+  
+  fullName : function() {
+     return this.firstName + " " + this.lastName;
+  } 
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//Explicit Function Binding
+
+=> Explicit Function Binding
+
+   - The call() and apply() methods are predefined JavaScript methods.
+
+   Example : 
+
+   const person1 = {
+   fullName: function() {
+      return this.firstName + " " + this.lastName;
+   }
+   }
+
+   const person2 = {
+   firstName:"John",
+   lastName: "Doe",
+   }
+
+   // Return "John Doe":
+   person1.fullName.call(person2);
+-----------------------------------------------------------------------------------------
+//JavaScript Arrow Function
  
- getElementById()
+   -- Before Arrow function
 
- Example : 
+      hello = function() {
+        return "Hello World!";
+      }
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+   -- With Arrow Function:
+
+      hello = () => {
+        return "Hello World!";
+      }
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
- 
- getElementById()
+//JavaScript Class Syntax
 
- Example : 
+  - Use the keyword class to create a class.
+  - Always add a method named constructor():
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+  class ClassName {
+     constructor() { ... }
+  }
 
------------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
- 
- getElementById()
+  Example : 
 
- Example : 
+  class Car {
+   constructor(name, year) {
+      this.name = name;
+      this.year = year;
+   }
+   }
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+   const myCar = new Car("Ford", 2014);
+   document.getElementById("demo").innerHTML =
+   myCar.name + " " + myCar.year;
 
------------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
- 
- getElementById()
 
- Example : 
+   => Class Methods
+   
+   Example : 
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+   <p id="demo"></p>
 
------------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
- 
- getElementById()
+      
+      class Car {
+      constructor(name, year) {
+         this.name = name;
+         this.year = year;
 
- Example : 
+      }
+      age() {
+         let date = new Date();
+         return date.getFullYear() - this.year;
+      }
+      }
 
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
-
------------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
- 
- getElementById()
-
- Example : 
-
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
-
------------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
- 
- getElementById()
-
- Example : 
-
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+      let myCar = new Car("Ford", 2014);
+      document.getElementById("demo").innerHTML =
+      "My car is " + myCar.age() + " years old.";
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//JavaScript Modules
+
+- JavaScript modules rely on the import and export statements.
+
+Example : 
+   import (anyfunction) from (where?);
+   const message = () => {
+      const name = "Jesse";
+      const age = 40;
+      return name + ' is ' + age + 'years old.';
+   };
+
+export default message;
+-----------------------------------------------------------------------------------------
+//JavaScript JSON
  
- getElementById()
+ => What is JSON?
+    - JSON stands for JavaScript Object Notation
+    - JSON is a lightweight data interchange format
+    - JSON is language independent *
+    - JSON is "self-describing" and easy to understand
 
- Example : 
-
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+   Example : 
+   
+      {
+        "employees":[
+           {"firstName":"John", "lastName":"Doe"},
+           {"firstName":"Anna", "lastName":"Smith"},
+           {"firstName":"Peter", "lastName":"Jones"}
+                    ]
+      }
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//Code Debugging
+
+- Often, when programming code contains errors, nothing will happen. There are no error messages, and you will get no indications where to search for errors.
+- Searching for (and fixing) errors in programming code is called code debugging.
  
- getElementById()
-
- Example : 
-
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+=> JavaScript Debuggers
+   
+    - The console.log() Method
+    - The debugger keyword
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//JavaScript Best Practices
  
- getElementById()
-
- Example : 
-
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+- Avoid Global Variables
+- Always Declare Local Variables
+- Declarations on Top
+- Initialize Variables with empty
+- Declare Objects with const
+- Declare Arrays with const
+- Don't Use new Object()
+- Beware of Automatic Type Conversions
+- Use === Comparison
+- Use Parameter Defaults
+  (If a function is called with a missing argument, the value of the missing argument is set to undefined)
+- End Your Switches with Defaults
+- Avoid Number, String, and Boolean as Objects
+- Avoid Using eval()
 
 -----------------------------------------------------------------------------------------
-//JavaScript Can Change HTML Content
+//JavaScript Common Mistakes
  
- getElementById()
-
- Example : 
-
- onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"
+- Accidentally Using the Assignment Operator 
+- Expecting Loose Comparison
+- Confusing Addition & Concatenation
+- Misunderstanding Floats
+- Breaking a JavaScript String
+- Misplacing Semicolon
+- Breaking a Return Statement
+- Accessing Arrays with Named Indexes
+- Ending Definitions with a Comma
+- Undefined is Not Null
+- 
+-----------------------------------------------------------------------------------------
+//JavaScript Performance
+ 
+- Reduce Activity in Loops
+- Reduce DOM Access
+- Reduce DOM Size
+- Avoid Unnecessary Variables
+- Delay JavaScript Loading
+- Avoid Using with
+  (The with keyword is not allowed in strict mode.)
 
 -----------------------------------------------------------------------------------------
 //JavaScript Can Change HTML Content
