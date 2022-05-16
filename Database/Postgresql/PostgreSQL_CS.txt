@@ -1,0 +1,40 @@
+//If any precreated table exist than drop it
+DROP TABLE IF EXISTS schemaname.tablename;
+
+//For creating a schema of table
+CREATE SCHEMA schema1;
+CREATE SCHEMA schema2;
+
+    /* Here table1 is example we can use any name */
+
+//For creating a table for created schema
+
+CREATE TABLE schema1.table1 (
+    table1_id            INT NOT NULL PRIMARY KEY,
+    table1_description   VARCHAR(50),
+    product_line         VARCHAR(25)
+);
+
+CREATE TABLE schema2.table2 (
+    sku             VARCHAR(7) NOT NULL PRIMARY KEY,
+    table2_name     VARCHAR(50) NOT NULL,
+    table2_id       INT,
+    size            INT,
+    price           DECIMAL(5,2) NOT NULL
+);
+
+//To add a column in a table, use the following syntax
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+//What is constaint
+Constraints can be specified when the table is created with the CREATE TABLE statement, or after the table is created with the ALTER TABLE statement. .... SQL constraints are used to specify rules for the data in a table. Constraints are used to limit the type of data that can go into a table.
+
+//Add constraint in table
+ALTER TABLE schemaname.tablename
+ADD CONSTRAINT constraintname FOREIGN KEY (which column you want to make constraint)
+    REFERENCES schemaname.tablename (which column you want to make constraint)
+;
+
+
