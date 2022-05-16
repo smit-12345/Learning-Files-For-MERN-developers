@@ -37,4 +37,66 @@ ADD CONSTRAINT constraintname FOREIGN KEY (which column you want to make constra
     REFERENCES schemaname.tablename (which column you want to make constraint)
 ;
 
+//For creating a database
+CREATE DATABASE (database name);
 
+//For droping a database
+DROP DATABASE (database name);
+
+//For Creating a user
+CREATE USER smit2 WITH SUPERUSER PASSWORD 'Smit@123';
+
+//For accesing database in terminal 
+psql -h [hostname (ex :- localhost)] -p 5432 -U username databasename
+
+
+// For Getting a list of Databases In terminal
+\l 
+
+// For switching to other database from one database 
+\c (database name)
+
+//Create Tabe 
+
+CREATE TABLE table_name (
+    Column name + datatype + constraints if any
+)
+
+Example : 
+
+CREATE TABLE person (
+    id int,
+    fname VARCHAR(50),
+    lname VARCHAR(50),
+    gender VARCHAR(6),
+    date_of_birth TIMESTAMP,
+)
+
+//For see the data 
+  - \d
+
+//For see any table's data
+  - \d (tablename) 
+
+//For insert values in table
+
+INSERT INTO table_name (column1_name,column2_name,...)
+VALUES (column1_value,column2_value,...)
+
+Example : 
+
+INSERT INTO person (first_name,last_name,gender,date_of_birth, email)
+VALUES ('fname2', 'lname2','Male', date '1999-08-4', 'name@gmail.com');
+
+//For showing all columns of the table with data
+SELECT * FROM table_name;
+
+//For showing perticular column of the table with data
+SELECT column_name FROM table_name;
+
+//For execute a command s from specific filter
+\i FILE_NAME
+
+//For showing data from table based on any tables asscending or descending order
+SELECT * FROM mock_data2 ORDER BY first_name ASC;
+SELECT * FROM mock_data2 ORDER BY first_name DESC;
