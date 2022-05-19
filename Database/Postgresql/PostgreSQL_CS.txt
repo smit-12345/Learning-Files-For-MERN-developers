@@ -37,6 +37,9 @@ ADD CONSTRAINT constraintname FOREIGN KEY (which column you want to make constra
     REFERENCES schemaname.tablename (which column you want to make constraint)
 ;
 
+
+
+
 //For creating a database
 CREATE DATABASE (database name);
 
@@ -100,3 +103,46 @@ SELECT column_name FROM table_name;
 //For showing data from table based on any tables asscending or descending order
 SELECT * FROM mock_data2 ORDER BY first_name ASC;
 SELECT * FROM mock_data2 ORDER BY first_name DESC;
+
+//Seleting a column and distinct the column data
+SELECT DISTINCT country_of_birth FROM person;
+
+//filter the data with coditions
+SELECT * FROM person WHERE gender = 'Male';
+
+-for multiple conditions
+SELECT * FROM person WHERE gender = 'Male' AND country_of_birth = 'India';
+
+//we can use comparison operators in postgresql like this
+- SELECT 1 = 1; 
+- SELECT 1 = 2; 
+- SELECT 1 < 2; 
+- SELECT 2 > 1; 
+- SELECT 2 >= 2; 
+- SELECT 2 <= 1; 
+- SELECT 2 > 1; 
+- SELECT 1 <> 2;   /* Not equals to*/
+
+//For Getting first some rows from database table
+SELECT * FROM person LIMIT 10;
+
+//For Getting some rows after some rows from database table
+SELECT * FROM person OFFSET 5 LIMIT 5;
+SELECT * FROM person OFFSET 5 FETCH FIRST 5 ROW ONLY;
+
+//many conditions in one column
+SELECT * FROM person WHERE country_of_birth IN ('Brazil', 'Chaina', 'India');
+
+//Use of beteween key word 
+SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2015-01-01';
+
+//Use of like keyword
+SELECT * FROM person WHERE email LIKE '%bloomberg.com';
+
+//Count the data
+SELECT email, COUNT(*) FROM mock_data2 GROUP BY email;
+
+//Use of having keyword
+SELECT email, COUNT(*) FROM mock_data2 GROUP BY email HAVING COUNT(*) > 5 ORDER BY email;
+
+//Aggregration functions
