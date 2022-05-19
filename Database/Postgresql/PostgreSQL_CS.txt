@@ -146,3 +146,147 @@ SELECT email, COUNT(*) FROM mock_data2 GROUP BY email;
 SELECT email, COUNT(*) FROM mock_data2 GROUP BY email HAVING COUNT(*) > 5 ORDER BY email;
 
 //Aggregration functions
+https://www.postgresql.org/docs/9.5/functions-aggregate.html#:~:text=9.20.%20Aggregate%20Functions%20%20%20%20Function%20,input%20va%20...%20%2015%20more%20rows%20
+
+//Use of MAX
+SELECT MAX(price) from cardata;
+
+//Use of MIN
+SELECT MIN(price) from cardata;
+
+//Use of AVG
+SELECT AVG(price) from cardata;
+
+//For round off the values
+SELECT ROUND(AVG(price)) from cardata;
+
+//SUM of all rows in one column
+SELECT SUM(price) FROM cardata;
+
+//Arithmatic operations 
+we can perform any basic Arithmatic operations in postgresql
+
+// Joins Between Tables
+SELECT * FROM weather JOIN cities ON city = name;
+
+     city      | temp_lo | temp_hi | prcp |    date    |     name      | location
+---------------+---------+---------+------+------------+---------------+-----------
+ San Francisco |      46 |      50 | 0.25 | 1994-11-27 | San Francisco | (-194,53)
+ San Francisco |      43 |      57 |    0 | 1994-11-29 | San Francisco | (-194,53)
+(2 rows)
+
+//Deletation from the database
+DELETE FROM weather WHERE city = 'Hayward';
+
+//Views
+
+CREATE VIEW myview AS
+    SELECT name, temp_lo, temp_hi, prcp, date, location
+        FROM weather, cities
+        WHERE city = name;
+
+SELECT * FROM myview;
+
+
+//Update in table
+
+BEGIN;
+UPDATE accounts SET balance = balance - 100.00
+    WHERE name = 'Alice';
+UPDATE branches SET balance = balance - 100.00
+    WHERE name = (SELECT branch_name FROM accounts WHERE name = 'Alice');
+UPDATE accounts SET balance = balance + 100.00
+    WHERE name = 'Bob';
+UPDATE branches SET balance = balance + 100.00
+    WHERE name = (SELECT branch_name FROM accounts WHERE name = 'Bob');
+COMMIT;
+
+//Window Functions
+
+A window function performs a calculation across a set of table rows that are somehow related to the current row. This is comparable to the type of calculation that can be done with an aggregate function. However, window functions do not cause rows to become grouped into a single output row like non-window aggregate calls would. Instead, the rows retain their separate identities. Behind the scenes, the window function is able to access more than just the current row of the query result.
+
+
+Example 1 : 
+
+-SELECT depname, empno, salary, avg(salary) OVER (PARTITION BY depname) FROM empsalary;
+
+  depname  | empno | salary |          avg          
+-----------+-------+--------+-----------------------
+ develop   |    11 |   5200 | 5020.0000000000000000
+ develop   |     7 |   4200 | 5020.0000000000000000
+ develop   |     9 |   4500 | 5020.0000000000000000
+ develop   |     8 |   6000 | 5020.0000000000000000
+ develop   |    10 |   5200 | 5020.0000000000000000
+ personnel |     5 |   3500 | 3700.0000000000000000
+ personnel |     2 |   3900 | 3700.0000000000000000
+ sales     |     3 |   4800 | 4866.6666666666666667
+ sales     |     1 |   5000 | 4866.6666666666666667
+ sales     |     4 |   4800 | 4866.6666666666666667
+
+
+Example 1 :   
+
+SELECT depname, empno, salary,
+       rank() OVER (PARTITION BY depname ORDER BY salary DESC)
+FROM empsalary; 
+
+  depname  | empno | salary | rank 
+-----------+-------+--------+------
+ develop   |     8 |   6000 |    1
+ develop   |    10 |   5200 |    2
+ develop   |    11 |   5200 |    2
+ develop   |     9 |   4500 |    4
+ develop   |     7 |   4200 |    5
+ personnel |     2 |   3900 |    1
+ personnel |     5 |   3500 |    2
+ sales     |     1 |   5000 |    1
+ sales     |     4 |   4800 |    2
+ sales     |     3 |   4800 |    2
+
+
+//Inheritance
+
+CREATE TABLE cities (
+  name       text,
+  population real,
+  elevation  int     -- (in ft)
+);
+
+CREATE TABLE capitals (
+  state      char(2) UNIQUE NOT NULL
+) INHERITS (cities);
+
+//To rename a table
+ALTER TABLE countries RENAME TO country_new;
+
+//Add column to table
+ALTER TABLE locations
+ADD region_id  INT;
+
+//Rename column of table
+ALTER TABLE locations 
+RENAME COLUMN state_province TO state;
+
+//Change type of values of tables
+ALTER TABLE locations
+ALTER region_id TYPE text;
+
+//add primary kew to table
+ALTER TABLE locations
+ADD PRIMARY KEY(location_id);
+
+//drop the existing primary from the table locations
+ALTER TABLE locations 
+DROP CONSTRAINT locations_pkey;
+
+//To add FOREIGN key
+ALTER TABLE job_history
+ADD FOREIGN KEY(job_id)
+REFERENCES jobs(job_id);
+
+//For updating a values of any table's column
+UPDATE employees SET email='not available';
+
+//Best website for postgresql exercises
+
+https://w3resource.com/postgresql-exercises/
