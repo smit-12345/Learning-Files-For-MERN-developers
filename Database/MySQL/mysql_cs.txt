@@ -1,0 +1,43 @@
+//CRUD operations 
+
+- create new
+INSERT INTO public.customer
+values(
+    79, 'Amata', 'Lee','amata@testcom','111-111-1111', 'home', 'New York', 'NY', '00000'
+);
+
+- Read data
+SELECT * FROM customers;
+
+-Update data values
+UPDATE customers
+SET first_name = 'Lee', last_name = 'Amata'
+WHERE id = 79;
+
+- Delete data
+DELETE FROM customers
+WHERE id = 79;
+
+// case sensitivity
+
+-MySQL is not case sensitive 
+
+SELECT * 
+FROM products
+WHERE category = 'Desserts';
+
+SELECT * 
+FROM products
+WHERE category = 'dessertS';
+
+//ifnull statement
+SELECT 
+ifnull(first_name, 'Error')
+FROM customers;
+
+SELECT 
+CASE WHEN first_name is null 
+then 'Error'
+else first_name
+end as first_name
+FROM customers;
