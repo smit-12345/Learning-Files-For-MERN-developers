@@ -1,0 +1,184 @@
+      |                 |
+            MONGO DB   
+      |                 |
+
+=> MongoDB is a document database3 designed for ease of development and scaling.
+=> It is intutive and easy to use NoSQL Database.
+=> Available as community and enterprise edition.\
+=> However the community edition itself is very powerful.
+
+
+//What is database
+In MongoDB, a database contains the collections of documents. One can create multiple databases on the MongoDB server.  
+
+//What is collections
+In MongoDB, a database contains the collections of documents. One can create multiple databases on the MongoDB server.  
+
+//what is Document
+In MongoDB, the data records are stored as BSON documents. Here, BSON stands for binary representation of JSON documents, although BSON contains more data types as compared to JSON. T
+
+//Showing all database3
+show dbs 
+
+//creating Database or switch to another database
+use db_name
+
+//In which database you are
+db
+
+//Delete database
+db.dropdatabase()
+
+//create collections
+db.createCollection('customers');
+
+//showing collections
+show collections
+
+//Delete database
+db.colection_name.drop()
+
+//To see the collection's rows
+db.collection_name.find()
+
+//To see the collection's rows in good form
+db.collection_name.find().pretty()
+
+//Insert one row
+db.colection_name.insert({
+  'field':'value',
+  'field':'value',
+  'field':'value'
+})
+
+//Insert many rows
+db.colection_name.insertMany([{
+  'name':'smit',
+  'surname':'suthar',
+  'number':50
+},
+{
+  'name':'name2',
+  'surname':'surname2',
+  'number':20
+},
+{
+  'name':'name3',
+  'surname':'surname3',
+  'number':11
+}
+]);
+
+//Other for collection
+
+    db.collection.find()
+    db.collection.findOne()
+    db.collection.aggregate()
+    db.collection.countDocuments()
+    db.collection.estimatedDocumentCount()
+    db.collection.count()
+    db.collection.distinct()
+
+//Search in mpngodb
+db.collection_name.find({name:'smit'})
+
+- find only first row matching
+db.collection_name.findOne({name:'smit'})
+
+//limiting output
+db.collection_name.find().limit(2)
+
+//count the numbers of rows in collections
+db.collection_name.find().count()
+
+//sorting output
+-Ascending order
+db.collection_name.find().sort({number:1})
+
+-Descending order
+db.collection_name.find().sort({number:-1})
+
+//update statement
+db.colection_name.update({name:'smit'},
+ { 
+   'name':'smit',
+   'surname':'suthar',
+   'number':34
+    })
+
+//update statement for many
+db.customers.updateMany({
+    city:"India"},
+    {$set:{city:"Miami"}
+});
+
+//Use of upsert in MongoDB
+- For exampe we dont have a row where (name: shubham) and we are updating it with adding upsert true than new row will be created
+
+db.collection_name.update({name:'shubham'},
+{'name':'shubham',
+  'number':27
+},{upsert:true}
+)
+
+//Delete
+db.customers.remove({first_name:'smit'});
+
+//Mongodb Increament operator
+db.colection_name.update({name:'shubham'},
+{
+  $inc:{
+    number: 5
+  }
+}
+
+)
+
+//Mongodb Rename operator
+db.colection_name.update({},
+{
+  $rename:{
+    name: 'myname'
+  }
+}
+
+)
+
+//Operators in Mongodb
+
+1) MongoDB Comparison Operators
+    Name     Pronounce                     Description
+
+    $eq      Equal To                      Matches values that are equal to the value specified in the query
+    $ne      Not Equal To (!=)             Matches all values that are not equal to the value specified in the query.
+    $gt      Greater Than (>)              Matches values that are greater than the value specified in the query.
+    $gte     Greater Than Equal To (>=)    Matches values that are greater than or equal to the value specified in the query.
+    $lt      Less Than (<)                 Matches values that are less than the value specified in the query.
+    $lte     Less Than Equal To (<=)       Matches values that are less than or equal to the value specified in the query.
+    $in      In (Available in)             Matches any of the values that exist in an array specified in the query.
+    $nin      Not In (Not available in)    Matches values that do not exist in an array specified in the query.
+
+2) MongoDB Logical Operators
+
+    Name	   Description
+
+    $and	   Returns all documents that match the conditions of both expressions.
+    $or	     Returns all documents that match the conditions of either expression.
+    $nor	   Returns all documents that do not match the conditions of either expression
+    $not	   Inverts the effect of a query expression and returns documents that do not match the query expression.
+
+3) MongoDB Array Operators
+
+    Name      	Description
+
+    $all	      Returns documents from a collection if it matches all values in the specified array.
+    $size	      Returns documents from the collection to match an array with the provided number of elements in it.
+    $elemMatch	Returns documents if they Match more than one component (all specified $elemMatch conditions) within an array element.
+
+4) MongoDB Element Operators
+
+    Name     	Description
+
+    $exists  	Returns documents that have a specific field.
+    $type	    Returns documents if field is of a specified type.
+
