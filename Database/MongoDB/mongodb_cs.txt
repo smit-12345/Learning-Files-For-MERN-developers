@@ -2,10 +2,16 @@
             MONGO DB   
       |                 |
 
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
 => MongoDB is a document database3 designed for ease of development and scaling.
 => It is intutive and easy to use NoSQL Database.
 => Available as community and enterprise edition.\
 => However the community edition itself is very powerful.
+
+---------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
 
 
 //What is database
@@ -17,6 +23,8 @@ In MongoDB, a database contains the collections of documents. One can create mul
 //what is Document
 In MongoDB, the data records are stored as BSON documents. Here, BSON stands for binary representation of JSON documents, although BSON contains more data types as compared to JSON. T
 
+
+---------------------------------------------------------------------------------------------------------------
 //Showing all database3
 show dbs 
 
@@ -28,6 +36,8 @@ db
 
 //Delete database
 db.dropdatabase()
+
+-------------------------------------------------------------------------------------------------------------
 
 //create collections
 db.createCollection('customers');
@@ -78,6 +88,9 @@ db.colection_name.insertMany([{
     db.collection.estimatedDocumentCount()
     db.collection.count()
     db.collection.distinct()
+
+---------------------------------------------------------------------------------------------------------------- 
+
 
 //Search in mpngodb
 db.collection_name.find({name:'smit'})
@@ -144,6 +157,8 @@ db.colection_name.update({},
 
 )
 
+--------------------------------------------------------------------------------------------------------------------
+
 //Operators in Mongodb
 
 1) MongoDB Comparison Operators
@@ -158,6 +173,8 @@ db.colection_name.update({},
     $in      In (Available in)             Matches any of the values that exist in an array specified in the query.
     $nin      Not In (Not available in)    Matches values that do not exist in an array specified in the query.
 
+--------------------------------------------------------------------------------------------------------------------
+
 2) MongoDB Logical Operators
 
     Name	   Description
@@ -167,6 +184,8 @@ db.colection_name.update({},
     $nor	   Returns all documents that do not match the conditions of either expression
     $not	   Inverts the effect of a query expression and returns documents that do not match the query expression.
 
+--------------------------------------------------------------------------------------------------------------------
+
 3) MongoDB Array Operators
 
     Name      	Description
@@ -175,10 +194,15 @@ db.colection_name.update({},
     $size	      Returns documents from the collection to match an array with the provided number of elements in it.
     $elemMatch	Returns documents if they Match more than one component (all specified $elemMatch conditions) within an array element.
 
+--------------------------------------------------------------------------------------------------------------------
+
 4) MongoDB Element Operators
 
     Name     	Description
 
     $exists  	Returns documents that have a specific field.
     $type	    Returns documents if field is of a specified type.
+
+--------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
 
