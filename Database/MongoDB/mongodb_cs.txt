@@ -101,6 +101,9 @@ db.collection_name.findOne({name:'smit'})
 //limiting output
 db.collection_name.find().limit(2)
 
+//For skipping some rows from output
+db.collection_name.find().skip(5).limit(5);
+
 //count the numbers of rows in collections
 db.collection_name.find().count()
 
@@ -156,6 +159,27 @@ db.colection_name.update({},
 }
 
 )
+
+/Write a MongoDB query to find the restaurant Id, name, borough and cuisine for those restaurants which contain 'Wil' as first three letters for its name.
+
+db.restaurants.find(
+{name: /^Wil/},
+{
+"restaurant_id" : 1,
+"name":1,"borough":1,
+"cuisine" :1
+}
+);
+
+db.titleCollection.find(
+{"borough" :{$in :["Staten Island","Queens","Bronx","Brooklyn"]}},
+{
+"restaurant_id" : 1,
+"name":1,"borough":1,
+"cuisine" :1
+}
+);
+
 
 --------------------------------------------------------------------------------------------------------------------
 
