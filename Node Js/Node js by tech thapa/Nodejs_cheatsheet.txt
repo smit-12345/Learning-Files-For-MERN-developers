@@ -2,6 +2,9 @@
 
 Node js is a javascript running on the server.
 
+
+-----------------------------------------------------------------------------------------------------
+
 //What is javascript engine
 Javascript engine converts a code to machine understandable binary form
 
@@ -9,6 +12,10 @@ Javascript engine converts a code to machine understandable binary form
 The REPL is feature of Node is very useful in experimenting with Node.js codes and to debug javascript codes.
 
 - Read , Eval , Print , Loop
+
+
+----------------------------------------------------------------------------------------------------
+
 
 //Diffreance beetween argument and parameter
 
@@ -21,6 +28,7 @@ javascript modules are js libraries, with help of that modukes we can include se
 
  Built in modules
 
+----------------------------------------------------------------------------------------------------
 
 //what is fs 
 fs is a module for file structure
@@ -47,3 +55,144 @@ Exercise:
 - It is used to store binary data
 - While reading a file or receiving packets over the network.
 
+//CRUD operations in Node js syncronous way
+
+//create a folder
+fs.mkdirSync("folder_name")
+
+//create a file
+fs.writeFileSync("file_name", "data")
+
+//read a file
+fs.readFile("name", "UTF-8");
+
+//Update file
+fs.appendFileSync("file_name", "new data");
+
+//Reaname file
+fs.renameSync("file_name", "file_new_name");
+
+//Delete file
+fs.unlinkSync("file_name");
+
+
+//Using asyncronous
+
+//Create a file
+
+fs.writeFile("async.txt", "This is async file", (err) => {
+    console.log("created");
+    console.log(err);
+});
+
+
+//Add a data in file
+
+fs.appendFile("name", "text",(err) => {
+    console.log("completed");
+}
+
+//Read a file
+
+fs.readFile("name", "UTF-8" ,(err, data) => {
+    console.log(data);
+     console.log(err);
+})
+
+--------------------------------------------------------------------------------------------------------
+
+//OS module
+
+//The syntax for including the OS module in your application:
+var os = require('os');
+
+//functions
+
+            Method	          Description
+            arch()	          Returns the operating system CPU architecture
+            constants	      Returns an object containing the operating system's constants for process signals, error cotes etc.
+            cpus()	          Returns an array containing information about the computer's CPUs
+            endianness()	  Returns the endianness of the CPU
+            EOL	              Returns the end-of-line marker for the current operating system
+            freemem()	      Returns the number of free memory of the system
+            hostname()        Returns the hostname of the operating system
+            loadavg()	      Returns an array containing the load averages, (1, 5, and 15 minutes)
+            networkInterfaces()	Returns the network interfaces that has a network address
+            platform()	      Returns information about the operating system's platform
+            release()	      Returns information about the operating system's release
+            tmpdir()	      Returns the operating system's default directory for temporary files
+            totalmem()        Returns the number of total memory of the system
+            type()	          Returns the name of the operating system
+            uptime()	      Returns the uptime of the operating system, in seconds
+            userInfo()	      Returns information about the current user
+
+
+--------------------------------------------------------------------------------------------------------
+
+//Node.js Path Module
+
+//The syntax for including the Path module in your application
+const path = require("path");
+
+//Path Properties and Methods
+
+        Method	        Description
+
+        basename()	    Returns the last part of a path
+        delimiter	    Returns the delimiter specified for the platform
+        dirname()	    Returns the directories of a path
+        extname()	    Returns the file extension of a path
+        format()	    Formats a path object into a path string
+        isAbsolute()	Returns true if a path is an absolute path, otherwise false
+        join()	        Joins the specified paths into one
+        normalize()	    Normalizes the specified path
+        parse()	        Formats a path string into a path object
+        posix	        Returns an object containing POSIX specific properties and methods
+        relative()	    Returns the relative path from one specified path to another specified path
+        resolve()	    Resolves the specified paths into an absolute path
+        sep	            Returns the segment separator specified for the platform
+        win32	        Returns an object containing Windows specific properties and methods
+
+
+------------------------------------------------------------------------------------------------------
+
+
+//Import export own created modules in appendFile
+
+- For this you have to see import_export folder from the exercise
+
+--------- NPM (Node Package Manager)--------
+
+
+
+//npm (originally short for Node Package Manager) is a package manager for the JavaScript programming language maintained by npm, Inc.
+
+//npm is the default package manager for the JavaScript runtime environment Node.js.
+
+www.npmjs.com
+
+
+//What is node modules
+node modules saves our applications's dependecies
+
+//For installing a module in projects (in terminal)
+npm install (module_name) 
+
+- For exercises see npm folder   
+
+//What is Diffreance between local module & global module
+
+- Local module installs in only specific folder and work on only that folder but the global modules installs in device globally
+
+- for installing globally it use -g in installing it
+
+//What is Nodemon
+nodemon is a module for running our application live it works on saving the file
+
+Nodemon is a popular tool that is used for the development of applications based on node.js. It simply restarts the node application whenever it observes the changes in the file present in the working directory of your project. Additionally, nodemon does not need any specific modifications to code or the mode of development.
+
+//Module Wrapper function in node JS(IFEE)
+
+(function(){
+    ...
+})
