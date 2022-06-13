@@ -1,0 +1,49 @@
+******************** WELCOME TO NODE JS CHEAT SHEET************************
+
+Node js is a javascript running on the server.
+
+//What is javascript engine
+Javascript engine converts a code to machine understandable binary form
+
+//What is REPL
+The REPL is feature of Node is very useful in experimenting with Node.js codes and to debug javascript codes.
+
+- Read , Eval , Print , Loop
+
+//Diffreance beetween argument and parameter
+
+Parameters are declared during function creating
+Arguments are given during calling that function
+
+//Javascript core modules
+
+javascript modules are js libraries, with help of that modukes we can include set of functions
+
+ Built in modules
+
+
+//what is fs 
+fs is a module for file structure
+
+There are many inbuilt functions in functions
+
+// creating a new file with fs module
+
+Exercise: 
+- learn creating_new_file_ex3.js
+
+// Adding a new data in file
+
+Exercise:
+- add_data_in_file_by_sync_func_ex4.js
+
+Exercise: 
+- learn creating_new_file_ex3.js
+
+//Buffer
+
+- Node js includes an additional data type called buffer.
+- It is not in js
+- It is used to store binary data
+- While reading a file or receiving packets over the network.
+
