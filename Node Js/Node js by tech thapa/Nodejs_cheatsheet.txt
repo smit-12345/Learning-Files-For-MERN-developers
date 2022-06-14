@@ -199,3 +199,104 @@ Nodemon is a popular tool that is used for the development of applications based
 (function(){
     ...
 })
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+//What is Node js web server?
+- To access web pages of any web application, you need a web server.
+- The web server will handle all the http requests for the web applications.
+- IIS is a web server for ASP.NET , Apache is a web server for PHP or java web app.
+- Node.js provides capabilities to create your own web server which will hadle HTTP requests asyncronously. 
+
+//How to create Node js server
+
+- require http module on you app
+  EX : const http = require("http");
+
+- Make a server const
+  EX : 
+      const server = http.createServer((req, res)  => {
+         res.end('Hello from server');
+        });  
+
+- Listen the server 
+  EX : 
+       server.listen(8000, "127.0.0.1", () => {
+           console.log("listning")
+       });
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+//Routing
+
+For changing in diffreant url Routing is used.
+
+Using routing the server responses depend on request url
+
+Ex : For exercise use httpserver folder's routing.js file.
+
+---------------------------------------------------------------------------------------
+
+//HTTP response status
+
+    Informational responses (100–199)
+    Successful responses (200–299)
+    Redirects (300–399)
+    Client errors (400–499)
+    Server errors (500–599)
+
+--------------------------------------------------------------------------------------------------------------------
+
+//What is JSON
+
+- JavaScript object notation
+
+- For converting object to json use JSON.stringify 
+
+- For converting json to object use JSON.parse
+
+Ex : See json_api folder
+
+--------------------------------------------------------------------------------------------------------------------
+
+//What is API
+
+- Application programme interface
+
+- Application Programming Interface (API) is used to communicate between apps and to access and fetch the required information.
+
+---------------------------------------------------------------------------------------------------------------------
+
+//Events in Node js
+
+Node.js has a built-in module, called "Events", where you can create-, fire-, and listen for- your own events.
+
+To include the built-in Events module use the require() method. In addition, all event properties and methods are an instance of an EventEmitter object. To be able to access these properties and methods, create an EventEmitter object:
+
+var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+EX : See event folder_name
+
+--------------------------------------------------------------------------------------------------------
+
+//What is Nodes streams 
+
+- Stream are objects that let you read data from a source or write data to a destination in continuous fashion.
+
+- Streaming means list to music or watching video in "real time" , instead of downloading a file to your and watching it later
+
+4types of streams : 
+  1. Readable
+  2. Writable
+  3. Duplex
+  4. Transform
+
+
+EX : for example see stream.js file in stream folder
+
+//Pipe method for using stream functionality
+
+Ex : for example see pipe_method.js file of stream folder
+
