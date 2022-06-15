@@ -159,8 +159,8 @@
 
             <div class="productinfo">
 
-                <div class="weathericon">
-                    <i class="fa fa-sun-o" id="weathericon" style="font-size:48px;color:yellow"></i>
+                <div id="weathericon">
+
                 </div>
             </div>
 
@@ -176,7 +176,7 @@
 
                     <div class="featureText">
                         <p> <strong>City Name</strong></p>
-                        <p>Vadodara</p>
+                        <p>{%cityname%}</p>
                     </div>
                     <br>
                     <hr>
@@ -196,7 +196,7 @@
 
                     <div class="featureText">
                         <p> <strong>Temperature</strong></p><br>
-                        <p>25.50 C</p>
+                        <p>{%tempval%} k</p>
                     </div>
                     <br>
                     <hr>
@@ -206,7 +206,7 @@
 
                     <div class="featureText">
                         <p> <strong>Min & Max Temperaure</strong></p><br>
-                        <p>Min 29.50 C | Max 32.50 C</p>
+                        <p>Min {%temp_min%} k | Max {%temp_max%} k</p>
                     </div>
                     <br>
                     <hr>
@@ -225,14 +225,78 @@
         const currDate = document.getElementById("date");
         let weathericon = document.getElementById("weathericon");
 
-        const temp = "cloud";
+        const tempStatus = "{%tempstatus%}";
 
-        const getCurrDate = () => {
+        if (tempStatus == "Rainy") {
+            weathericon.innerHTML = "<i class='fa fa-tint' aria-hidden='true' style='font-size:48px;color:white'></i><i class='fa fa-tint' aria-hidden='true' style='font-size:48px;color:white'></i><i class='fa fa-tint' aria-hidden='true' style='font-size:48px;color:white'></i>"
+        } else if (tempStatus == "Sunny") {
+            weathericon.innerHTML = "<i class='fa fa-sun-o' id='weathericon' style='font-size:48px;color:yellow'></i>"
+        } else if (tempStatus == "Clouds") {
+            weathericon.innerHTML = "<i class='fa fa-sun-o' id='weathericon' style='font-size:48px;color:yellow'></i>"
+        } else {
+            weathericon.innerHTML = "<i class='fa fa-sun-o' id='weathericon' style='font-size:48px;color:white'></i>"
+        }
+
+        const getCurrDay = () => {
+
+            var weekdays = new Array(7);
+            weekdays[0] = "Sun";
+            weekdays[1] = "Mon";
+            weekdays[2] = "Tue";
+            weekdays[3] = "Wed";
+            weekdays[4] = "Thu";
+            weekdays[5] = "Fri";
+            weekdays[6] = "Sat";
+
             let cuurTime = new Date();
-            console.log(cuurTime.getDay());
+            let day = weekdays[cuurTime.getDay()];
+            return day;
         };
 
-        getCurrDate();
+        const getCurrDate = () => {
+            var now = new Date();
+            var months = [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "July",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec",
+            ]
+
+            var month = months[now.getMonth() + 1]
+            var day = now.getDate();
+
+            let hours = now.getHours();
+            let mins = now.getMinutes();
+            let periods = "AM"
+
+            if (hours > 11) {
+                perios = "PM";
+                if (hours > 12) hours -= 12;
+            }
+            if (mins < 10) {
+                mins = "0" + mins;
+            }
+            // console.log(month + "/" + "/" + day + "/" + "/" + hours + "/" + "/" + mins)
+
+            return `${month}  ${day} | ${hours}:${mins}${periods}`;
+
+        };
+
+        currDate.innerHTML = getCurrDay() + " | " + getCurrDate();
+
+        console.log(getCurrDay())
+        console.log(getCurrDate())
+
+
+
 
     </script>
 </body>

@@ -34,6 +34,7 @@ javascript modules are js libraries, with help of that modukes we can include se
 ----------------------------------------------------------------------------------------------------
 
 //what is fs 
+
 fs is a module for file structure
 
 There are many inbuilt functions in functions
@@ -41,11 +42,13 @@ There are many inbuilt functions in functions
 // creating a new file with fs module
 
 Exercise: 
+
 - learn creating_new_file_ex3.js
 
 // Adding a new data in file
 
 Exercise:
+
 - add_data_in_file_by_sync_func_ex4.js
 
 Exercise: 
@@ -300,3 +303,15 @@ EX : for example see stream.js file in stream folder
 
 Ex : for example see pipe_method.js file of stream folder
 
+//After learning till this go for project named DynamicWeatherappUsingRealTimeAPI
+
+//What is expresss js?
+Express.js is na node js frame work. It is most popular as of now.
+
+Express.js is a web applocation framework that provides you with simple API to build websites, web apps and back ends.
+
+//Why it is needed?
+
+Try to write a small REST API server in plain Node.js and then in Express.js. The latter will take you 5-10x less time and lines of code in Express.js
+
+//Note : For Learning Express.js go to the folder ExpressJsByTechThapa and use their exercises and cheatsheet.

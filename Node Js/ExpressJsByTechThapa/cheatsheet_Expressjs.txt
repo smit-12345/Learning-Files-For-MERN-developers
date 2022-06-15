@@ -1,0 +1,56 @@
+
+*******************************************************************************************
+******************** WELCOME TO Express JS CHEAT SHEET ****************************************
+*******************************************************************************************
+
+//What is expresss js?
+Express.js is na node js frame work. It is most popular as of now.
+
+Express.js is a web applocation framework that provides you with simple API to build websites, web apps and back ends.
+
+//Why it is needed?
+
+Try to write a small REST API server in plain Node.js and then in Express.js. The latter will take you 5-10x less time and lines of code in Express.js
+
+
+//Steps to install
+- make a folder
+- Init npm
+- Install Express js package
+- Require module on file
+- Add express function 
+
+//Methods in Express
+
+get - read  EX: 
+app.get(route, callback)
+post - create
+put - update
+delete - delete
+
+//See creating_server_using_express.js file 
+- In this file you will learn hoe to connect server using express.js
+
+//See routing.js file
+- In this file you will learn how to do routing in express.js
+
+//What is middleware
+- The things which are done during requests and responses are seen by middleware.
+
+- express.static(root, [options])
+
+
+//Serve html file also css & js using express js
+
+- const staticPath = path.join(__dirname, "../public")
+- app.use(express.static(staticPath));
+
+
+//Template Engines (Pug, hbs, EJs) in node js
+
+-EJs(Embedded javascript templates)
+
+- For working with dynamic data this engines are used
+
+#steps
+- install hbs
