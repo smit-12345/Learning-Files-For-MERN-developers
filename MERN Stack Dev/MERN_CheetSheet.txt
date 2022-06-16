@@ -1,3 +1,80 @@
 **************************************************************************************************************
 ***************************MERN STACK CHEAT SHEET*************************************************************
 **************************************************************************************************************
+
+//Things we have to learn before MERN STACK
+- Html
+- Css
+- JavaScript (Advanced Javascript)
+- BootStrap
+- React Js
+- Node Js
+- Mongo DB
+- Express Js
+
+// Making a project
+
+//First make a folder
+mkdir folder name
+
+//Make a child folder in it 
+mkdir server
+
+//Init npm
+npm init
+
+//Install express
+npm i express
+
+//make a file named app.js
+
+//Create a server using express
+
+//do routing 
+
+app.get('/', (req, res) => {
+    res.send("hello world from the server")
+});
+
+//Add middleware
+
+const middleWare = (req, res, next) => {
+    console.log("midde");
+    next();
+}
+
+app.get('/about', middleWare, (req, res) => {
+    res.send("This is about")
+});
+
+
+#steps for database & connection to the app
+- Create Project in Mongo db atlas
+- Create cluster
+- get a MONGODB_URL
+- install mongoose in project (and require it in app)
+- give a network access to database
+
+//For db connection
+const DB = 'MONGODB_URL'
+
+
+//connect to database
+
+mongoose.connect(DB).then(() => {
+    console.log('connected to database')
+}).catch((err) => console.log(err))
+
+//install dotenv npm package
+
+npm i dotenv
+- create config.env file in server folder
+The Dotenv is helpful for securing our keys & password.
+
+# make a modals folder
+# create a userSchema file and declare the schema of database
+
+//How to Declare schema
+const userSchema = new mongoose.Schema({
+    Declare schema here...
+});
