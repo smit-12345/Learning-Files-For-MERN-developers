@@ -54,3 +54,18 @@ delete - delete
 
 #steps
 - install hbs
+- make a views folder in your app
+- make a index.hbs file in it
+- give a route for your index.hbs file
+- set the view engine
+- set template engine route
+
+//For changing the view folder name
+
+const templatePath = path.join(__dirname, "../templates");
+
+//To set the view engine
+app.set("view engine", "hbs");
+app.set('views',templatePath)
+
+//Partials
