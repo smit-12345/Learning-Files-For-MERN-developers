@@ -1,51 +1,50 @@
-const express = require('express');
-
-const dotenv = require('dotenv');
-const app = express();
+const dotenv = require("dotenv");
 const mongoose = require('mongoose');
-// const User = require('./modals/userSchema')
+const express = require('express');
+const app = express();
 
+dotenv.config({ path: './config.env' });
 
-//link router
-app.use(require('./router/auth'))
-
-dotenv.config({ path: './config.env' })
-const DB = process.env.DATABASE;
-const PORT = process.env.PORT;
-
-//connect to database
-
-mongoose.connect(DB).then(() => {
-    console.log('connected to database')
-}).catch((err) => console.log(err))
+require('./db/conn');
+// const User = require('./model/userSchema');
 
 app.use(express.json());
 
+// we link the router files to make our route easy 
+app.use(require('./router/auth'));
 
-//Middleware
+const PORT = process.env.PORT;
 
-const middleWare = (req, res, next) => {
-    console.log("middleware is running");
+
+// Middelware 
+const middleware = (req, res, next) => {
+    console.log(`Hello my Middleware`);
     next();
 }
 
-//Routing
 // app.get('/', (req, res) => {
-//     res.send("hello world from the server app")
+//     res.send(`Hello world from the server app.js`);
 // });
 
-app.get('/about', middleWare, (req, res) => {
-    res.send("This is about")
+app.get('/about', middleware, (req, res) => {
+    console.log(`Hello my About`);
+    res.send(`Hello About world from the server`);
 });
+
 app.get('/contact', (req, res) => {
-    res.send("This is contact")
+    res.send(`Hello Contact world from the server`);
 });
+
 app.get('/signin', (req, res) => {
-    res.send("This is in")
+    res.send(`Hello Login world from the server`);
 });
+
 app.get('/signup', (req, res) => {
-    res.send("This is up")
+    res.send(`Hello Registration world from the server`);
 });
+
 app.listen(PORT, () => {
-    console.log("server is running")
-});
+    console.log(`server is runnig at port no ${PORT}`);
+})
+
+
