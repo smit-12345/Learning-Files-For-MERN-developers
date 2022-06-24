@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 require('../db/conn');
 const User = require('../modals/userSchema');
+const authentication = require("../middleware/authentcation")
 
 router.get('/', (req, res) => {
     res.send(`Hello world from the server rotuer js`);
@@ -44,18 +47,29 @@ router.post('/register', async (req, res) => {
     const { name, email, phone, work, password, cpassword } = req.body;
 
     if (!name || !email || !phone || !work || !password || !cpassword) {
+
         return res.status(422).json({ error: "Plz fill the field properly" });
     }
 
+
+
     try {
 
+        const regex = /^[A-Za-z]+$/
         const ifUserExists = await User.findOne({ email: email });
 
         if (ifUserExists) {
+
             return res.status(422).json({ error: "Email Already Exists" });
-        } else if (password != cpassword) {
+        } else if (regex.test(name) === false) {
+
+        }
+        else if (password != cpassword) {
             res.status(400).json({ error: "password is not matching" });
-        } else {
+        }
+        else {
+
+
             const user = new User({ name, email, phone, work, password, cpassword });
 
             await user.save();
@@ -81,17 +95,45 @@ router.post('/login', async (req, res) => {
 
         const userlogin = await User.findOne({ email: email });
 
-        console.log(userlogin);
-        if (!userlogin) {
-            res.status(400).json({ error: "error during log in" });
+
+
+        if (userlogin) {
+            const isMatch = await bcrypt.compare(password, userlogin.password);
+            const token = await userlogin.generateAuthToken();
+
+            res.cookie("jwtoken", token, {
+                expires: new Date(Date.now() + 25892000000), httpOnly: true
+            });
+
+
+            console.log(token);
+            if (!isMatch) {
+                console.log("not matching")
+                res.status(400).json({ error: "error during log in" });
+            } else {
+                res.json({ message: "user log in success" });
+            }
         } else {
-            res.json({ message: "user log in success" });
+            res.status(400).json({ error: "error during log in" });
         }
+
 
     } catch (err) {
         console.log(err);
     }
 
 });
+router.get('/about', authentication, (req, res) => {
+
+    const requested = req.rootUser
+    console.log(requested)
+    res.send(requested)
+
+});
+
+// router.get('/about', authentication/*authentication middleware*/, (req, res) => {
+//     
+// });
+
 
 module.exports = router;

@@ -78,3 +78,22 @@ The Dotenv is helpful for securing our keys & password.
 const userSchema = new mongoose.Schema({
     Declare schema here...
 });
+
+*****************************************************
+...add some cheays here...
+*****************************************************
+
+//What is jwt
+Json web token is used to authentication.
+
+- Install it
+  npm i jsonwebtoken
+
+Three steps for this web token
+1. Generate JWT token and store it in Database.
+2. How to stored the tokens in Cookies.
+3. Get tokens from Cookies and veryfy the user
+
+
+
+//Adding react js for front end in projects
